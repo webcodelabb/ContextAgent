@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  contextagent:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4}
+      - VECTOR_STORE_TYPE=${VECTOR_STORE_TYPE:-chroma}
+      - CHROMA_PERSIST_DIRECTORY=${CHROMA_PERSIST_DIRECTORY:-./chroma_db}
+      - HOST=${HOST:-0.0.0.0}
+      - PORT=${PORT:-8000}
+      - SERP_API_KEY=${SERP_API_KEY}
+      - LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2:-false}
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+    volumes:
+      - ./chroma_db:/app/chroma_db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s 

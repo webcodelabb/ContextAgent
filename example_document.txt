@@ -1,0 +1,32 @@
+ContextAgent: AI Assistant Backend
+
+ContextAgent is a modular, production-ready AI assistant backend built with Python, LangChain, OpenAI API, and RAG (Retrieval-Augmented Generation) pipeline.
+
+Key Features:
+- RAG Pipeline: Embed documents and perform similarity search for context retrieval
+- LangChain Agent: Chain of tools including Calculator and Google Search
+- Conversational Memory: Maintains conversation history using LangChain's ConversationBufferMemory
+- Document Ingestion: Support for PDFs, TXT, Markdown, and DOCX files
+- Embeddings: OpenAI embeddings for document vectorization
+- Vector Store: ChromaDB for fast document retrieval
+- Environment-based Configuration: Secure API key management
+- Swagger Documentation: Auto-generated API docs
+- FastAPI Backend: High-performance async API
+
+Architecture:
+The system is built with a modular architecture that separates concerns:
+- Routes: Handle HTTP requests and responses
+- Chains: Manage LLM interactions and RAG pipelines
+- Tools: Provide specific functionalities like calculations and web search
+- Memory: Maintain conversation state
+- Ingest: Handle document processing and vector storage
+- Utils: Configuration and utility functions
+
+Use Cases:
+- Customer support chatbots
+- Internal knowledge assistants
+- PDF and document Q&A tools
+- Custom agent workflows
+- Research and analysis tools
+
+The system can be deployed as a standalone service or integrated into existing applications. It provides a RESTful API that can be consumed by any frontend application. 
