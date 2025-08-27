@@ -317,9 +317,8 @@ This project is licensed under the MIT License.
 - [OpenAI](https://openai.com/) for the GPT models
 - [ChromaDB](https://www.trychroma.com/) for vector storage
 - [FastAPI](https://fastapi.tiangolo.com/) for the web framework
-
+.
 ---
 
-**Built with ❤️ for the AI community** Testing coauthor achievement
-Fixing coauthor format
-Fixing coauthor format
+**Built with ❤️ for Muhammad Aminu Umar** 
+ 
